@@ -3,5 +3,5 @@ project(mod4)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES counter.cpp)
+set(SOURCE_FILES pointClass.cpp)
 add_executable(mod4 ${SOURCE_FILES})

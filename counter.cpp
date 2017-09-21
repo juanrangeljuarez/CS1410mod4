@@ -10,7 +10,6 @@ using namespace std;
 class Counter
 {
 private:
-    int m;
     unsigned int count;
 public:
     Counter(): count(10)
