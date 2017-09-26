@@ -38,6 +38,7 @@ public:
         cout << " and inches " << inches <<endl;
     }
     void add_dist(Distance d1, Distance d2);
+    Distance add_dist_tome(Distance d1);
 };
 
 // Prototypes
@@ -59,6 +60,9 @@ int main() {
     d4.add_dist(d2,d3);
     cout << "\nd4 = ";
     d4.showDistance();
+    d4.add_dist_tome(d2);
+    cout << "\nd4 new= ";
+    d4.showDistance();
     return 0;
 }
 
@@ -79,4 +83,17 @@ void Distance::add_dist(Distance d2, Distance d3)
         feet++;         // check for extra foot
     }
     feet += d2.feet + d3.feet; // add feet
+}
+
+Distance Distance::add_dist_tome(Distance d1)
+{
+    Distance temp(d1.feet,d1.inches); // initial values 0,0
+    temp.inches = inches + d1.inches;
+    if(temp.inches >= 12)
+    {
+        temp.inches -= 12.0;
+        temp.feet = 1;
+    }
+    temp.feet += feet + d1.feet;
+    return temp;
 }
